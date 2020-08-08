@@ -19,7 +19,7 @@ categories_input = input('')
 
 # parse user input
 categories_input_index = [int(index) - 1 for index in categories_input.split(",")]
-categories_input_index = set(np.clip(categories_input_index, 0, len(categories_all) - 1).tolist()) # avoid illegal index
+categories_input_index = set(np.clip(categories_input_index, 0, len(categories_all) - 1))  # avoid illegal index
 categories = [categories_all[i] for i in categories_input_index]
 
 # print selected categories
