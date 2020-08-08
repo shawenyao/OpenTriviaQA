@@ -28,6 +28,7 @@ categories = [
     "television",
     "video-games",
     "world"]
+
 file_names = ["categories/" + category for category in categories]
 
 # a list of all the questions by category
