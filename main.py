@@ -18,12 +18,12 @@ print('Input the categories of choice, separated by comma:')
 categories_input = input('')
 
 # parse user input
-categories_input_index = [int(index) - 1 for index in categories_input.split(",")]
+categories_input_index = [int(index) - 1 for index in categories_input.split(',')]
 categories_input_index = set(np.clip(categories_input_index, 0, len(categories_all) - 1))  # avoid illegal index
 categories = [categories_all[i] for i in categories_input_index]
 
 # print selected categories
-print("Selected categories:")
+print('Selected categories:')
 for counter, value in enumerate(categories):
     print(str(counter + 1) + ': ' + value)
 print('====================================')
@@ -38,10 +38,13 @@ for file_name in file_names:
     lines_list.append(lines)
 
 # game begins
+round_count = 1
 while True:
     # loop through categories
     for counter, value in enumerate(categories):
 
+        print('Round ' + str(round_count) + ', Player ' + str(counter + 1) + '/' + str(len(categories)))
+        
         print('Category: ' + value)
         input('')
 
@@ -70,3 +73,5 @@ while True:
             else:
                 print(lines_list[counter][index])
             index = index + 1
+
+    round_count = round_count + 1
