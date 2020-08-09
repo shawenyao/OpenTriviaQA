@@ -56,11 +56,12 @@ while True:
 
         while True:
             # if it's the end of the question, wait for user input to show the answer and break the loop
-            if lines_list[counter][index] == '':
+            if lines_list[counter][index] == '' and index_answer is not None:
                 input('')
 
                 # print the answer
                 print(lines_list[counter][index_answer])
+                index_answer = None
                 print('====================================')
                 break
 
